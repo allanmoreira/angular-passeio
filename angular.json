@@ -12,7 +12,15 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "standalone": false
+          "standalone": false,
+          "flat": false,
+          "type": "component",
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "flat": false,
+          "type": "service",
+          "skipTests": true
         },
         "@schematics/angular:directive": {
           "standalone": false
