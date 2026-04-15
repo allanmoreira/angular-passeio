@@ -4,7 +4,13 @@ import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [{
   path: '',
-  component: LayoutComponent
+  component: LayoutComponent,
+  children: [
+    {
+      path: 'categorias',
+      loadChildren: () => import('../categorias/categorias-module').then(m => m.CategoriasModule),
+    }
+  ]
 }];
 
 @NgModule({
