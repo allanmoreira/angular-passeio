@@ -22,6 +22,10 @@
           "type": "service",
           "skipTests": true
         },
+        "@schematics/angular:class": {
+          "type": "class",
+          "skipTests": true
+        },
         "@schematics/angular:directive": {
           "standalone": false
         },
