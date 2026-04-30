@@ -1,0 +1,50 @@
+<div class="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg mt-6">
+  <h1 class="text-2x1 font-semibold text-gray-700 mg-4">Novo Lugar</h1>
+  <hr/>
+  <form id="lugarForm" [formGroup]="camposForm" (ngSubmit)="salvar()">
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2">Nome</label>
+      <input type="text" required formControlName="nome"
+             class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring-2 focus:outline-none focus:ring-blue-400"
+             id="nome" name="nome" placeholder="Ex: Praia do Sol, Restaurante Estrela...">
+<!--      /@if(isCampoInvalido('nome')) {-->
+<!--        <span class="text-red-500 text-sm">Campo obrigatório</span>-->
+<!--      }-->
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2">Categoria</label>
+      <select for="categoria" id="categoria" name="categoria" formControlName="categoria"
+              class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring-2 focus:outline-none focus:ring-blue-400">
+        <option value="">Selecione uma categoria</option>
+        @for (item of categorias; track item.id) {
+          <option [value]="item.id">{{ item.nome }}</option>
+        }
+      </select>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2">Localização</label>
+      <input type="text" required formControlName="localizacao"
+             class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring-2 focus:outline-none focus:ring-blue-400"
+             id="localizacao" name="localizacao" placeholder="Ex: São Paulo, Recife...">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2">URL Foto</label>
+      <input type="text" required formControlName="urlFoto"
+             class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring-2 focus:outline-none focus:ring-blue-400"
+             id="urlFoto" name="urlFoto" placeholder="http://exemplo.com/foto.jpg">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2">Avaliação</label>
+      <select for="categoria" id="categoria" name="categoria" formControlName="categoria"
+              class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring-2 focus:outline-none focus:ring-blue-400">
+        <option value="">Selecione uma opção</option>
+        <option value="1">1 - Muito ruim</option>
+        <option value="2">2 - Ruim</option>
+        <option value="3">3 - Regular</option>
+        <option value="4">4 - Bom</option>
+        <option value="5">5 - Excelente</option>
+      </select>
+    </div>
+    <button type="submit" class="w-full bg-blue-600 text-white font-semibold p-3 rounded shadow hover:bg-blue-700">Salvar</button>
+  </form>
+</div>
