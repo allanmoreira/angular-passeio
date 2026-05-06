@@ -24,11 +24,19 @@
   "lugares": [
     {
       "nome": "Cassino",
-      "categoria": "3",
-      "localizacao": "Rio Grande",
-      "urlFoto": "foto.jpg",
-      "avaliacao": "",
-      "id": "B_CDGvIZcuc"
+      "categoria": "4",
+      "localizacao": "Rio Grande do Sul",
+      "urlFoto": "https://s2-g1.glbimg.com/zdGVool0oi_XWucl4HvXLB58BFw=/0x0:1200x600/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/D/h/BqVq9yTH6oJlfZ7rgM8A/foto-2-maior-praia-do-brasil.png",
+      "avaliacao": "1",
+      "id": "nf4MvKHcPMo"
+    },
+    {
+      "nome": "Tommatis",
+      "categoria": "1",
+      "localizacao": "Canoas",
+      "urlFoto": "https://revistasaboresdosul.com.br/wp-content/uploads/2016/12/premio-revista-sabores-do-sul-2016-tommattis-melhor-buf%C3%AA-640x424.jpg",
+      "avaliacao": "5",
+      "id": "P0kC2MNqsy8"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
