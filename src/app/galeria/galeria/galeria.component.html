@@ -13,7 +13,7 @@
 </div>
 
 <div id="lugaresList" class="p-4 grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-  @for (item of lugares; track item.id) {
+  @for (item of lugares(); track item.id) {
     <div class="bg-white shadow rounded overflow-hidden">
       <img [src]="item.urlFoto" alt="{{ item.nome }}" class="w-full h-40 object-cover"/>
       <div class="p-4">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Categoria } from '../../categorias/categoria';
 import { CategoriaService } from '../../categorias/categoria/categoria.service';
 import { Lugar } from '../../lugares/lugar.class';
@@ -11,8 +11,10 @@ import { LugarService } from '../../lugares/lugar/lugar.service';
   styleUrl: './galeria.component.scss',
 })
 export class GaleriaComponent implements OnInit {
-  categorias: Categoria[] = [];
-  lugares: Lugar[] = [];
+  categorias = signal<Categoria[]>([]);
+  lugares = signal<Lugar[]>([]);
+  nomeFiltro: string = '';
+  categoriaFiltro: string = '';
 
   constructor(
     private categoriaService: CategoriaService,
@@ -21,11 +23,11 @@ export class GaleriaComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoriaService.list().subscribe((categorias) => {
-      this.categorias = categorias;
+      this.categorias.set(categorias);
     });
 
     this.lugarService.list().subscribe((lugares) => {
-      this.lugares = lugares;
+      this.lugares.set(lugares);
     });
   }
 
