@@ -28,4 +28,12 @@ export class GaleriaComponent implements OnInit {
       this.lugares = lugares;
     });
   }
+
+  getTotalEstrelas(lugar: Lugar): string {
+    let avaliacao = lugar.avaliacao?.valueOf() || 0;
+    return (
+      '&#9733'.repeat(avaliacao || 0) +
+      '&#9734'.repeat((5-(avaliacao) || 0))
+    );
+  }
 }

@@ -37,6 +37,14 @@
       "urlFoto": "https://revistasaboresdosul.com.br/wp-content/uploads/2016/12/premio-revista-sabores-do-sul-2016-tommattis-melhor-buf%C3%AA-640x424.jpg",
       "avaliacao": "5",
       "id": "P0kC2MNqsy8"
+    },
+    {
+      "nome": "Porto Alegre",
+      "categoria": "4",
+      "localizacao": "Rio Grande do Sul",
+      "urlFoto": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/IBPA_17398_-_Vista_a%C3%A9rea_da_Orla_Moacyr_Scliar%2C_na_capital._O_-_2018-10-02_-_Luciano_Lanes-PMPA_%28cropped%29.jpg/330px-IBPA_17398_-_Vista_a%C3%A9rea_da_Orla_Moacyr_Scliar%2C_na_capital._O_-_2018-10-02_-_Luciano_Lanes-PMPA_%28cropped%29.jpg",
+      "avaliacao": "4",
+      "id": "CwpuPEGpk0w"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
