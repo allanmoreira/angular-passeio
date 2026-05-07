@@ -1,16 +1,27 @@
-<div class="p-4 bg-white shadow">
-  <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-    <input type="text" placeholder="Pesquisar pelo nome do local"
-        class="w-full border border-gray-300 p-2 roudend shadow-sm focus:ring focus:ring-blue-400">
+<form #frm="ngForm">
+  <div class="p-4 bg-white shadow">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+      <input type="text" placeholder="Pesquisar pelo nome do local"
+             [(ngModel)]="nomeFiltro"
+              name="nomeFiltro"
+          class="w-full border border-gray-300 p-2 roudend shadow-sm focus:ring focus:ring-blue-400">
 
-    <select class="w-full border border-gray-300 p-2 roudend shadow-sm focus:ring focus:ring-blue-400">
-      <option [value]="">Todas as categorias</option>
-      @for (item of categorias; track item.id) {
-        <option [value]="item.id">{{ item.nome }}</option>
-      }
-    </select>
+      <select class="w-full border border-gray-300 p-2 roudend shadow-sm focus:ring focus:ring-blue-400"
+              [(ngModel)]="categoriaFiltro"
+              name="categoriaFiltro">
+        <option value="0">Todas as categorias</option>
+        @for (item of categorias(); track item.id) {
+          <option [value]="item.nome">{{ item.nome }}</option>
+        }
+      </select>
+
+      <button type="submit" (click)="filtrar()"
+              class="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-800">
+        Filtrar
+      </button>
+    </div>
   </div>
-</div>
+</form>
 
 <div id="lugaresList" class="p-4 grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   @for (item of lugares(); track item.id) {

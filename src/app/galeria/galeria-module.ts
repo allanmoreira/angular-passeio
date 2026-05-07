@@ -3,10 +3,10 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { GaleriaRoutingModule } from './galeria-routing-module';
 import { GaleriaComponent } from './galeria/galeria.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [GaleriaComponent],
-  imports: [CommonModule, GaleriaRoutingModule, ReactiveFormsModule, NgOptimizedImage],
+  imports: [CommonModule, GaleriaRoutingModule, ReactiveFormsModule, NgOptimizedImage, FormsModule],
 })
 export class GaleriaModule {}

@@ -14,11 +14,11 @@ export class GaleriaComponent implements OnInit {
   categorias = signal<Categoria[]>([]);
   lugares = signal<Lugar[]>([]);
   nomeFiltro: string = '';
-  categoriaFiltro: string = '';
+  categoriaFiltro: string = '0';
 
   constructor(
     private categoriaService: CategoriaService,
-    private lugarService: LugarService
+    private lugarService: LugarService,
   ) {}
 
   ngOnInit(): void {
@@ -33,9 +33,12 @@ export class GaleriaComponent implements OnInit {
 
   getTotalEstrelas(lugar: Lugar): string {
     let avaliacao = lugar.avaliacao?.valueOf() || 0;
-    return (
-      '&#9733'.repeat(avaliacao || 0) +
-      '&#9734'.repeat((5-(avaliacao) || 0))
-    );
+    return '&#9733'.repeat(avaliacao || 0) + '&#9734'.repeat(5 - avaliacao || 0);
+  }
+
+  filtrar() {
+    this.lugarService.filtrar(this.nomeFiltro, this.categoriaFiltro).subscribe((lugares) => {
+      this.lugares.set(lugares);
+    });
   }
 }
