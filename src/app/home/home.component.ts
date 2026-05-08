@@ -27,8 +27,6 @@ export class HomeComponent {
 
   isLoggedIn(): boolean{
     this.profile = this.authGoogleService.getProfile();
-    console.log(this.profile);
-    console.log(this.profile?.name);
     return !!this.profile;
   }
 }

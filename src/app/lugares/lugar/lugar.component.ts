@@ -35,8 +35,6 @@ export class LugarComponent implements OnInit {
 
   salvar() {
     this.camposForm.markAllAsTouched();
-    console.log(this.camposForm.valid);
-    console.log(this.camposForm);
     if (this.camposForm.valid){
       this.lugarService.salvar(this.camposForm.value).subscribe({
         next: (response) => {

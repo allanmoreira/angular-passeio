@@ -23,7 +23,6 @@ export class CategoriaComponent {
     if(this.camposForm.valid){
       this.categoriaService.salvar(this.camposForm.value).subscribe({
         next: (categoria) => {
-          console.log(categoria);
           // this.camposForm.reset();
         },
         error: (error) => {
