@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProfileModel } from './profile.model';
 import { Router } from '@angular/router';
+import { AuthgoogleService } from '../authgoogle/authgoogle.service';
 
 @Component({
   selector: 'app-home',
@@ -11,17 +12,23 @@ import { Router } from '@angular/router';
 export class HomeComponent {
   profile: ProfileModel | undefined;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private authGoogleService: AuthgoogleService
+  ) {}
 
   navegar(){
     this.router.navigate(['/paginas/galeria']);
   }
 
   loginGoogle(){
-
+    this.authGoogleService.login();
   }
 
   isLoggedIn(): boolean{
+    this.profile = this.authGoogleService.getProfile();
+    console.log(this.profile);
+    console.log(this.profile?.name);
     return !!this.profile;
   }
 }
