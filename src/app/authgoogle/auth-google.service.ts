@@ -6,7 +6,7 @@ import { auth } from '../auth.config';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthgoogleService {
+export class AuthGoogleService {
   private oauthservice: OAuthService = inject(OAuthService);
   private router: Router = inject(Router);
   profile = signal<any>(null);

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ProfileModel } from './profile.model';
 import { Router } from '@angular/router';
-import { AuthgoogleService } from '../authgoogle/authgoogle.service';
+import { AuthGoogleService } from '../authgoogle/auth-google.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,7 @@ export class HomeComponent {
 
   constructor(
     private router: Router,
-    private authGoogleService: AuthgoogleService
+    private authGoogleService: AuthGoogleService
   ) {}
 
   navegar(){
